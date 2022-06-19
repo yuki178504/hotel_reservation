@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HotelApp</title>
+    <title>宿泊予約サイト</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-list">
+        <p class="header-logo">ポテパンシェア</p>
+        <p class="search-window">検索窓</p>
+        <p class="search-window">検索窓</p>
+        <p class="list-login">ログイン</p>
+        <p class="list-new">新規登録</p>
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      <h2>フッターとなるページ</h2>
+    </footer>
   </body>
 </html>
