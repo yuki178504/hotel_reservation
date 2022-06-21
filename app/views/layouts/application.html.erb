@@ -11,18 +11,25 @@
   </head>
 
   <body>
+    <div class="container">
     <header>
       <div class="header-list">
-        <p class="header-logo">ポテパンシェア</p>
+        <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"), "/top/page" %>
         <p class="search-window">検索窓</p>
         <p class="search-window">検索窓</p>
-        <p class="list-login">ログイン</p>
-        <p class="list-new">新規登録</p>
+        <% if user_signed_in? %>
+          <p class="login">ログイン中</p>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "login" %>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path, class: "login" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "new" %>
+        <% end %>
       </div>
     </header>
     <%= yield %>
     <footer>
       <h2>フッターとなるページ</h2>
     </footer>
+    </div>
   </body>
 </html>

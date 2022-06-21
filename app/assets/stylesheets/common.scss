@@ -1,17 +1,16 @@
 header {
     width: 100%; /* 幅いっぱいを指定 */
     height: 70px; /* 高さを50pxに指定 */
-    background: #CCC; /* 背景色にグレーを指定 */
+    background: black; /* 背景色にグレーを指定 */
     padding: 0px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
     box-sizing: border-box; /* padding分を含んで幅を100%にするため */
-    position: fixed; /* ウィンドウを基準に画面に固定 */
-    top: 0; /* 上下の固定位置を上から0pxにする */
-    left: 0; /* 左右の固定位置を左から0pxにする */
-    z-index: 10;
-
-
 }
 
+.container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
 
 body {
     padding-top: 90px;
@@ -31,20 +30,91 @@ body {
 
 .search-window {
     margin-right: 10px;
+    color: white;
 }
 
-.list-login {
+a {
+    text-decoration: none;
+}
+
+.sign-up {
+    color: blue;
+}
+
+.sign-up-page {
+    border:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    text-align: center;
+    width: 500px;
+    padding: 20px 0px;
+    margin: 100px 400px;
+}
+
+.label {
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    font-size: 10px;
+    padding: 5px;
+}
+
+.label-out {
+    display: inline;
     margin-right: 10px;
+}
+
+.field {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.text_field {
+    font-size: 15px;
+    width: 300px;
+    height: 30px;
+}
+
+.actions {
+    margin: 15px 0px;
+    border-radius: 5px;
+    color: white;
+    background-color: #32cd32;
+    border: none;
+    padding: 7px 120px;
+    cursor: pointer;
+}
+
+.login {
+    border-radius: 5px;
+    color: white;
+    background-color: #32cd32;
+    height: 25px;
+    padding: 8px 20px;
+    margin-top: 10px;
+    margin-right: 15px;
     margin-left: auto;
     
 }
 
+.new {
+    border-radius: 5px;
+    color: white;
+    background-color: #00bfff;
+    height: 25px;
+    padding: 8px 20px;
+    margin-top: 10px;
+}
+
 footer {
+    color: white;
     width: 100%; /* 幅いっぱいを指定 */
     height: 70px; /* 高さを50pxに指定 */
-    background: #CCC; /* 背景色にグレーを指定 */
+    background: black; /* 背景色にグレーを指定 */
     padding: 0px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
     box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+    margin-top: auto;
 }
 
 main {
@@ -62,10 +132,6 @@ main {
     bottom: 150px;
     left: 50px;
     background-color: white;
-}
-
-article {
-    
 }
 
 ul {
@@ -100,4 +166,9 @@ li {
 
 .sapporo {
     background-image: url("https://img.kb-cdn.com/imgviewer/NVpIM2ptOHhYRzVmUk5rM1NrNlFxYVV6enV4aGk2UFRJMmxPckdDUUVNWVJOc25FMktmOWVMa29uM3VxcW1QK214R0RnZVNJOUk4eHdXWkRPN1EvblYxWEdzTndRRmR1eFBJWTNCV2J5VHJwKzFaeUt2Vnc4WklneWwwN0R2WXAvMCsrNWVjZlVXVTRYV1ByODFwUTJsc3NyM3FuMG5Yd0VkdXZSYUFCTDl2QzRiQ3pRZ2lHWExTa1Y4T3FNYjZhclN1anJQcGxqWnpUc0c4Z2xpclkxdz09");
+}
+
+article {
+    width: 100%;
+    height: 400px;
 }
