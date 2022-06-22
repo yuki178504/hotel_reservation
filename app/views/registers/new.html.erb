@@ -1,0 +1,39 @@
+<div class="register">
+  <p class="room-register">ルーム情報登録</p>
+
+    <%= form_with model: @register do |f| %>
+
+      <div class="field">
+        <div class="room-out"><%= f.label "ルーム名", class: "room" %></div>
+        <div class="label-out"><%= f.label "必須", class: "label" %></div>
+        <%= f.text_field :name, class: "register-text" %>
+      </div>
+
+      <div class="field">
+          <div class="room-out"><%= f.label "ルーム紹介", class: "room" %></div>
+          <div class="label-out"><%= f.label "必須", class: "label" %></div>
+          <%= f.text_area :introduction, class: "register-text" %>
+        </div>
+
+        <div class="field">
+          <div class="room-out"><%= f.label "ルーム料金", class: "room" %></div>
+          <div class="label-out"><%= f.label "必須", class: "label" %></div>
+          <%= f.text_field :price, class: "register-text" %>
+        </div>
+
+        <div class="field">
+          <div class="room-out"><%= f.label "住所", class: "room" %></div>
+          <div class="label-out"><%= f.label "必須", class: "label" %></div>
+          <%= f.text_field :address, class: "register-text" %>
+        </div>
+
+        <div class="field">
+          <div class="room-out"><%= f.label "ルーム画像", class: "room" %></div>
+          <div class="label-out"><%= f.label "必須", class: "label" %></div>
+          <%= f.file_field :avatar_path, accept: 'image/*', class: "register-text" %>
+        </div>
+
+        <%= f.submit "新規登録", class: "actions" %>
+
+    <% end %>
+</div>
