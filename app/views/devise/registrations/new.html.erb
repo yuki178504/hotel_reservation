@@ -5,22 +5,22 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <div class="label-out"><%= f.label "必須", class: "label" %></div>
+      <%= f.label "必須", class: "label" %>
       <%= f.text_field :name, placeholder: "ユーザー名", autofocus: true, autocomplete: "name", class: "text_field"  %>
     </div>
 
     <div class="field">
-      <div class="label-out"><%= f.label "必須", class: "label" %></div>
+      <%= f.label "必須", class: "label" %>
       <%= f.email_field :email, placeholder: "メールアドレス", autocomplete: "email", class: "text_field" %>
     </div>
 
     <div class="field">
-      <div class="label-out"><%= f.label "必須", class: "label" %></div>
+      <%= f.label "必須", class: "label" %>
       <%= f.password_field :password, placeholder: "パスワード(6文字以上)", autocomplete: "new-password", class: "text_field" %>
     </div>
 
     <div class="field">
-      <div class="label-out"><%= f.label "必須", class: "label" %></div>
+      <%= f.label "必須", class: "label" %>
       <%= f.password_field :password_confirmation, placeholder: "パスワード(確認)", autocomplete: "new-password", class: "text_field" %>
     </div>
 

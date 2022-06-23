@@ -1,3 +1,4 @@
+/*ヘッダー　フッター*/
 header {
     width: 100%; /* 幅いっぱいを指定 */
     height: 70px; /* 高さを50pxに指定 */
@@ -12,82 +13,15 @@ header {
     flex-direction: column;
 }
 
-body {
-    padding-top: 90px;
-    margin: 0px;
-    padding: 0px;
-}
-
 .header-list {
     display: flex;
     justify-content: space-between;
 
 }
 
-.header-logo {
-    margin-right: 10px;
-}
-
 .search-window {
     margin-right: 10px;
     color: white;
-}
-
-a {
-    text-decoration: none;
-}
-
-.sign-up {
-    color: blue;
-}
-
-.sign-up-page {
-    border:1px solid #EEE;
-    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
-    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
-    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
-    text-align: center;
-    width: 500px;
-    padding: 20px 0px;
-    margin: 100px 400px;
-}
-
-.label {
-    background-color: red;
-    color: white;
-    border-radius: 3px;
-    font-size: 10px;
-    padding: 5px;
-}
-
-.label-out {
-    display: inline;
-    margin-right: 10px;
-}
-
-.room-out {
-    display: inline;
-}
-
-.field {
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-.text_field {
-    font-size: 15px;
-    width: 300px;
-    height: 30px;
-}
-
-.actions {
-    margin: 15px 0px;
-    border-radius: 5px;
-    color: white;
-    background-color: #32cd32;
-    border: none;
-    padding: 7px 120px;
-    cursor: pointer;
 }
 
 .login {
@@ -120,6 +54,7 @@ footer {
     box-sizing: border-box; /* padding分を含んで幅を100%にするため */
     margin-top: auto;
 }
+/*top/page*/
 
 main {
     width: 100%;
@@ -175,4 +110,160 @@ li {
 article {
     width: 100%;
     height: 400px;
+}
+/*devise/sessions/new && registrations/new*/
+.sign-up-page {
+    border:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    text-align: center;
+    width: 500px;
+    padding: 20px 0px;
+    margin: 100px 400px;
+}
+
+.label {
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    font-size: 10px;
+    padding: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.field {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.text_field {
+    font-size: 15px;
+    width: 300px;
+    height: 30px;
+}
+
+.actions {
+    margin: 15px 0px;
+    border-radius: 5px;
+    color: white;
+    background-color: #32cd32;
+    border: none;
+    padding: 7px 120px;
+    cursor: pointer;
+}
+/*registers/new*/
+.main-register {
+    display: flex;
+    
+}
+
+.basic-out {
+    border-right: 2px solid #dcdcdc;
+}
+
+.basic-ul {
+    display: inline;
+}
+
+.basic-link {
+    color: #1e90ff;
+    font-size: 17px;
+    margin-left: 30px;
+    padding-right: 80px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-right: 3px solid #1e90ff;
+}
+
+.register {
+    border:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    width: 900px;
+    padding: 20px 0px;
+    margin: 60px 100px;
+}
+
+.room-register {
+    margin-top: -10px;
+    font-size: 20px;
+    
+}
+
+.field-out {
+    margin: 20px 10px;
+    padding: 20px;
+    border-bottom: 1px solid #dcdcdc;
+    
+}
+
+.room-out {
+    margin: 0px 10px;
+    padding: 0px;
+}
+
+.field-in {
+    margin-bottom: 10px;
+    text-align: left;
+    display: flex;
+}
+
+.room {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+.label-register {
+   font-size: 14px;
+   height: fit-content;
+   margin-right: 50px;
+   background-color: red;
+   color: white;
+   border-radius: 3px;
+   font-weight: bold;
+}
+
+.register-text {
+    margin-left: 3px;
+    font-size: 15px;
+    width: 625px;
+    height: 30px;
+}
+
+.name {
+    margin-left: 19px;
+}
+
+.introduction {
+    height: 100px;
+}
+
+.address {
+    margin-left: 49px;
+}
+
+.actions-registers {
+    border-radius: 5px;
+    color: white;
+    background-color: #32cd32;
+    border: none;
+    padding: 7px 120px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+/*全体*/
+body {
+    padding-top: 90px;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
 }

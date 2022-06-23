@@ -3,12 +3,12 @@
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <div class="label-out"><%= f.label "必須", class: "label" %></div>
+      <%= f.label "必須", class: "label" %>
       <%= f.email_field :email, placeholder: "メールアドレス", autofocus: true, autocomplete: "email", class: "text_field" %>
     </div>
 
     <div class="field">
-      <div class="label-out"><%= f.label "必須", class: "label" %></div>
+      <%= f.label "必須", class: "label" %>
       <%= f.password_field :password, placeholder: "パスワード", autocomplete: "current-password", class: "text_field" %>
     </div>
 

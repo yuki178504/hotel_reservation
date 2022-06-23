@@ -1,39 +1,60 @@
-<div class="register">
-  <p class="room-register">ルーム情報登録</p>
+<div class="main-register">
+  <div class="basic-out">
+    <ul class="basic-ul">
+      <li><%= link_to "基本情報", new_register_path, class: "basic-link" %></li>
+    </ul>
+  </div>
+  <div class="register">
+    <div class="field-out room-out">
+      <div class="field-in">
+        <p class="room-register">ルーム情報登録</p>
+      </div>
+    </div>
 
     <%= form_with model: @register do |f| %>
 
-      <div class="field">
-        <div class="room-out"><%= f.label "ルーム名", class: "room" %></div>
-        <div class="label-out"><%= f.label "必須", class: "label" %></div>
-        <%= f.text_field :name, class: "register-text" %>
+      <div class="field-out">
+        <div class="field-in">
+          <%= f.label "ルーム名", class: "room" %>
+          <%= f.label "必須", class: "label-register" %>
+          <%= f.text_field :name, placeholder: "ルーム名を入力してください", class: "register-text name" %>
+        </div>
       </div>
 
-      <div class="field">
-          <div class="room-out"><%= f.label "ルーム紹介", class: "room" %></div>
-          <div class="label-out"><%= f.label "必須", class: "label" %></div>
-          <%= f.text_area :introduction, class: "register-text" %>
+      <div class="field-out">
+        <div class="field-in">
+          <%= f.label "ルーム紹介", class: "room" %>
+          <%= f.label "必須", class: "label-register" %>
+          <%= f.text_area :introduction, placeholder: "ルームの説明を入力してください", class: "register-text introduction" %>
         </div>
+      </div>
 
-        <div class="field">
-          <div class="room-out"><%= f.label "ルーム料金", class: "room" %></div>
-          <div class="label-out"><%= f.label "必須", class: "label" %></div>
-          <%= f.text_field :price, class: "register-text" %>
+      <div class="field-out">
+        <div class="field-in">
+          <%= f.label "ルーム料金", class: "room" %>
+          <%= f.label "必須", class: "label-register" %>
+          <%= f.text_field :price, placeholder: "１日の料金を入力してください", class: "register-text" %>
         </div>
+      </div>
 
-        <div class="field">
-          <div class="room-out"><%= f.label "住所", class: "room" %></div>
-          <div class="label-out"><%= f.label "必須", class: "label" %></div>
-          <%= f.text_field :address, class: "register-text" %>
+      <div class="field-out">
+        <div class="field-in">
+         <%= f.label "住所", class: "room" %>
+         <%= f.label "必須", class: "label-register" %>
+         <%= f.text_field :address, placeholder: "住所を入力してください", class: "register-text address" %>
         </div>
+      </div>
 
-        <div class="field">
-          <div class="room-out"><%= f.label "ルーム画像", class: "room" %></div>
-          <div class="label-out"><%= f.label "必須", class: "label" %></div>
-          <%= f.file_field :avatar_path, accept: 'image/*', class: "register-text" %>
+      <div class="field-out">
+        <div class="field-in">
+          <%= f.label "ルーム画像", class: "room" %>
+          <%= f.label "必須", class: "label-register" %>
+          <%= f.file_field :avatar_path, accept: 'image/*', class: "register-text avatar" %>
         </div>
-
-        <%= f.submit "新規登録", class: "actions" %>
-
-    <% end %>
+      </div>
+      
+          <%= f.submit "新規登録", class: "actions-registers" %>
+       
+      <% end %>
+  </div>
 </div>
