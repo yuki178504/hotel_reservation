@@ -10,10 +10,15 @@ class RegistersController < ApplicationController
   def create
     @register = Register.new(params.require(:register).permit(:avatar_path, :name, :introduction, :price, :address))
     if @register.save
-      redirect_to top_page_path
+      redirect_to :registers
     else
       render "new"
     end
+  end
+
+  def show
+    @register = Register.find(params[:id])
+    @reserve = Reserve.new
   end
 
 end

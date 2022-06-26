@@ -4,6 +4,7 @@
       <li><%= link_to "基本情報", new_register_path, class: "basic-link" %></li>
     </ul>
   </div>
+  
   <div class="register">
     <div class="field-out room-out">
       <div class="field-in">
@@ -11,7 +12,9 @@
       </div>
     </div>
 
-    <%= form_with model: @register do |f| %>
+    <%= form_with model: @register, local: true do |f| %>
+
+      <%= render 'shared/error', obj: @register, class: "alert-out" %>
 
       <div class="field-out">
         <div class="field-in">
