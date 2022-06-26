@@ -54,7 +54,7 @@ footer {
     box-sizing: border-box; /* padding分を含んで幅を100%にするため */
     margin-top: auto;
 }
-/*top/page*/
+/*トップページ*/
 
 main {
     width: 100%;
@@ -111,7 +111,7 @@ article {
     width: 100%;
     height: 400px;
 }
-/*devise/sessions/new && registrations/new*/
+/*新規登録画面とログイン画面*/
 .sign-up-page {
     border:1px solid #EEE;
     box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
@@ -121,6 +121,10 @@ article {
     width: 500px;
     padding: 20px 0px;
     margin: 100px 400px;
+}
+
+.new-acount {
+    padding: 10px;
 }
 
 .label {
@@ -134,14 +138,17 @@ article {
 }
 
 .field {
-    margin-top: 10px;
-    margin-left: 10px;
+    padding: 10px;
 }
 
 .text_field {
     font-size: 15px;
     width: 300px;
     height: 30px;
+}
+
+.field_with_errors {
+    display:contents
 }
 
 .actions {
@@ -153,10 +160,9 @@ article {
     padding: 7px 120px;
     cursor: pointer;
 }
-/*registers/new*/
+/*ルーム新規登録画面*/
 .main-register {
     display: flex;
-    
 }
 
 .basic-out {
@@ -219,13 +225,13 @@ article {
 }
 
 .label-register {
-   font-size: 14px;
-   height: fit-content;
-   margin-right: 50px;
-   background-color: red;
-   color: white;
-   border-radius: 3px;
-   font-weight: bold;
+    font-size: 14px;
+    height: fit-content;
+    margin-right: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    font-weight: bold;
 }
 
 .register-text {
@@ -257,6 +263,103 @@ article {
     margin-left: 30px;
 }
 
+/*登録済みルーム一覧画面*/
+.register-done-main {
+    padding: 20px 40px;
+}
+
+.register-done {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+table {
+    background-color: #f5f5f5;
+    border:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+}
+
+tr td {
+    padding: 0px;
+    border: 1px solid #dcdcdc;
+}
+
+/*新規予約画面*/
+.reserve-new-main {
+    display: flex;
+    padding: 30px 70px;
+    border: 3px solid blue;
+}
+
+.reserve-new-in {
+    border: 3px solid red;
+}
+
+.reserve-new-main-2 {
+    display: flex;
+    border: 3px solid green;
+}
+
+.reserve-image {
+    margin: 10px;
+}
+
+.reserve-name {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+.reserve-address {
+    margin: 10px;
+    font-size: 13px;
+}
+
+.reserve-introduction {
+    padding: 20px 0px;
+    border-bottom: 3px solid palevioletred;
+    border-top: 3px solid palevioletred;
+}
+
+.reserve-new {
+    padding: 20px;
+    border: 3px solid peru;
+
+}
+
+.reserve-new-input {
+    border: 3px solid greenyellow;
+}
+
+.reserve-price {
+    margin: 10px 0px;
+    font-weight: bold;
+}
+
+.start-date {
+    font-size: 16px;
+    height: 30px;
+    width: 300px;
+    margin: 10px 0px;
+}
+
+.end-date {
+    font-size: 16px;
+    height: 30px;
+    width: 300px;
+    margin: 10px 0px;
+}
+
+.number-people {
+    font-size: 16px;
+    height: 30px;
+    width: 300px;
+    margin: 10px 0px;
+}
+
 /*全体*/
 body {
     padding-top: 90px;
@@ -267,3 +370,16 @@ body {
 a {
     text-decoration: none;
 }
+
+.alert-out {
+    color: red;
+    border: 2px solid red;
+    background-color: #ffe4e1;
+}
+
+.alert {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+

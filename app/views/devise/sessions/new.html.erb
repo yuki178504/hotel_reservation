@@ -2,6 +2,9 @@
   <p>ログイン</p>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <%= render "devise/shared/error_messages", resource: resource %>
+  
     <div class="field">
       <%= f.label "必須", class: "label" %>
       <%= f.email_field :email, placeholder: "メールアドレス", autofocus: true, autocomplete: "email", class: "text_field" %>

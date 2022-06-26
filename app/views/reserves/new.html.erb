@@ -1,0 +1,7 @@
+<%= form_with model: @reserve, local: true do |f| %>
+  <%= @reserve.start_date %>
+  <%= f.hidden_field :start_date %>
+
+  <%= f.submit "完了" %>
+  <% end %>
+

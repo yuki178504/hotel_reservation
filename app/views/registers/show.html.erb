@@ -1,0 +1,36 @@
+<div class="reserve-new-main">
+    <div class="reserve-new-in">
+      <%= image_tag (@register.avatar_path.url), size: '700x400' %>
+      <div class="reserve-new-main-2">
+        <div class="reserve-image"><%= image_tag (@register.avatar_path.url), size: '50x50' %></div>
+        <div class="reserve-new-main-3">
+          <div class="reserve-name"><%= @register.name %></div>
+          <div class="reserve-address"><%= @register.address %></div>
+        </div>
+      </div>
+      <div class="reserve-introduction"><%= @register.introduction %></div>
+    </div>
+    <div class="reserve-new">
+      <div class="reserve-new-input">
+        <div class="reserve-price"><%= @register.price %>円 / 日</div>
+        <%= form_with model: @reserve, url: confirm_reserves_path(@reserve), local: true do |f| %>
+          <%= f.label :start_date, "開始日" %></br>
+          <%= f.date_field :start_date, class: "start-date" %></br>
+          <%= f.label :end_date, "終了日" %></br>
+          <%= f.date_field :end_date, class: "end-date" %></br>
+          <%= f.label :number_people, "人数" %></br>
+          <%= f.number_field :number_people, class: "number-people" %>
+
+          <%= f.hidden_field :register_id, value: @register.id %>
+          <%= f.hidden_field :register_name, value: @register.name %>
+          <%= f.hidden_field :register_introduction, value: @register.introduction %>
+          <%= f.hidden_field :register_price, value: @register.price %>
+          <%= f.hidden_field :register_avatar_path, value: @register.avatar_path %>
+
+          <%= f.submit "予約完了" %>
+
+          
+        <% end %>
+      </div>
+    </div>
+</div>

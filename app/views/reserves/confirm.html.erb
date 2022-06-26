@@ -1,0 +1,8 @@
+<%= @reserve.start_date %>
+<%= @reserve.end_date %>
+
+<%= form_with model: @reserve, local: true do |f| %>
+  <%= f.hidden_field :start_date %>
+
+  <% end %>
+

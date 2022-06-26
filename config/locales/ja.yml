@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+   models:
+    register: レギスター
+   attributes:
+    register:
+     name: ⚠︎ルーム名
+     introduction: ⚠︎ルームの説明
+     price: ⚠︎料金
+     address: ⚠︎住所
+     avatar_path: ⚠︎ルーム画像

@@ -1,25 +1,31 @@
-<p class="register-done">登録済みルーム一覧</p>
+<div class="register-done-main">
+ <p class="register-done">登録済みルーム一覧</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>ルーム画像</th>
-      <th>ルーム名</th>
-      <th>ルーム紹介</th>
-      <th>料金</th>
-      <th>作成日</th>
-    </tr>
-  </thead>
+ <table>
+   <thead>
+     <tr>
+       <th>ルーム画像</th>
+       <th>ルーム名</th>
+       <th>ルーム紹介</th>
+       <th>料金</th>
+       <th>登録日</th>
+     </tr>
+   </thead>
 
-  <tbody>
-    <% @registers.each do |register| %>
-      <tr>
-        <td><%= image_tag (register.avatar_path.url), size: '200x200' %></td>
-        <td><%= register.name %></td>
-        <td><%= register.introduction %></td>
-        <td><%= register.price %></td>
-        <td><%= register.created_at %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+   <tbody>
+     <% @registers.each do |register| %>
+       <tr>
+         <td>
+          <%= link_to register do %>
+            <%= image_tag (register.avatar_path.url), size: '300x200' %>
+          <% end %>
+        </td>
+         <td><%= link_to register.name, register %></td>
+         <td><%= register.introduction %></td>
+         <td><%= register.price %>円</td>
+         <td><%= register.created_at.to_s(:datetime_jp) %></td>
+       </tr>
+     <% end %>
+   </tbody>
+ </table>
+</div>
