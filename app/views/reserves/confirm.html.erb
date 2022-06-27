@@ -1,8 +1,30 @@
-<%= @reserve.start_date %>
-<%= @reserve.end_date %>
+<div class="confirm-main">
+  <div class="confirm-main-2">
+    <div class="confirm-title">予約内容確認</div>
+    <div class="confirm-price"><%= @reserve.price %>円　/ 日</div>
+    <div>開始日</div>
+    <div class="confirm-date"><%= @reserve.starte_date %></div>
+    <div>終了日</div>
+    <div class="confirm-date"><%= @reserve.end_date %></div>
+    <div class="confirm-day">使用日数 : <%= @day %>日</div>
+    <div class="confirm-day">人数 : <%= @reserve.number_people %>人</div>
+    <div>合計金額</div>
+    <div class="confirm-date"><%= @sum %>円</div>
+    <div>上記内容でよろしければ予約を確定してください</div>
 
-<%= form_with model: @reserve, local: true do |f| %>
-  <%= f.hidden_field :start_date %>
-
+  <%= form_with model: @reserve, local: true do |f| %>
+    <%= f.submit "予約確定", class: "actions-registers" %>
+    <%= f.hidden_field :avatar_path %>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :introduction %>
+    <%= f.hidden_field :total, value: @sum %>
+    <%= f.hidden_field :starte_date %>
+    <%= f.hidden_field :end_date %>
+    <%= f.hidden_field :register_id%>
   <% end %>
+  <%= link_to :back do %>
+      <button class="back">戻る</button>
+    <% end %>
+  </div>
+</div>
 

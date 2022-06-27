@@ -290,16 +290,14 @@ tr td {
 .reserve-new-main {
     display: flex;
     padding: 30px 70px;
-    border: 3px solid blue;
 }
 
 .reserve-new-in {
-    border: 3px solid red;
+
 }
 
 .reserve-new-main-2 {
     display: flex;
-    border: 3px solid green;
 }
 
 .reserve-image {
@@ -320,18 +318,17 @@ tr td {
 
 .reserve-introduction {
     padding: 20px 0px;
-    border-bottom: 3px solid palevioletred;
-    border-top: 3px solid palevioletred;
+    border-bottom: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
 }
 
 .reserve-new {
     padding: 20px;
-    border: 3px solid peru;
-
 }
 
 .reserve-new-input {
-    border: 3px solid greenyellow;
+    padding: 20px;
+    border: 1px solid #d3d3d3;
 }
 
 .reserve-price {
@@ -359,6 +356,59 @@ tr td {
     width: 300px;
     margin: 10px 0px;
 }
+
+.reserve-submit {
+    background-color: #00bfff;
+    margin: 15px 0px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 7px 120px;
+    cursor: pointer;
+}
+/*予約確認画面*/
+
+.confirm-main {
+    padding: 10px 400px;
+}
+
+.confirm-main-2 {
+    padding: 10px;
+    border: 1px solid #d3d3d3;
+}
+
+.confirm-title {
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.confirm-price {
+    margin: 15px 0px;
+    font-size: 20px;
+}
+
+.confirm-date {
+    height: 30px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    background-color: #dcdcdc;
+    border: 2px solid #d3d3d3;
+}
+
+.confirm-day {
+    padding: 15px 0px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.back {
+    background-color: #00bfff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
 
 /*全体*/
 body {
