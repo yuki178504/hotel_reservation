@@ -18,7 +18,7 @@
         <p class="search-window">検索窓</p>
         <p class="search-window">検索窓</p>
         <% if user_signed_in? %>
-          <p class="login">ログイン中</p>
+          <p class="user-name"><%= current_user.name %></p>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "login" %>
         <% else %>
           <%= link_to "ログイン", new_user_session_path, class: "login" %>
@@ -32,6 +32,7 @@
       <%= link_to "ルーム登録", new_register_path, class: "new"  %>
       <%= link_to "ルーム一覧", registers_path, class: "new"  %>
       <%= link_to "ルーム予約一覧", reserves_path, class: "new"  %>
+      <%= link_to "アカウント", users_show_path %>
     </footer>
     </div>
   </body>
