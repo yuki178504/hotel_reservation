@@ -1,4 +1,6 @@
 class ReservesController < ApplicationController
+  
+
   def index
     @register = Register.all
     @reserves = Reserve.all
