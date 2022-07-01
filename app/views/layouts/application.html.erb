@@ -19,7 +19,19 @@
         <p class="search-window">検索窓</p>
         <% if user_signed_in? %>
           <p class="user-name"><%= current_user.name %></p>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "login" %>
+          <div class="nav">
+            <input id="drawer_input" class="drawer_hidden" type="checkbox">
+            <label for="drawer_input" class="drawer_open"><%= image_tag (current_user.image.url), size: '55x55', class: "icon-image" %></label>
+            <nav class="nav_content">
+              <ul class="nav_list">
+                <li class="nav_item"><%= link_to "ルーム登録", new_register_path %></li>
+                <li class="nav_item"><%= link_to "ルーム予約済み一覧", reserves_path %></li>
+                <li class="nav_item"><%= link_to "ルーム登録済み一覧", registers_path %></li>
+                <li class="nav_item"><%= link_to "アカウント設定", users_path %></li>
+                <li class="nav_item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </nav>
+          </div>
         <% else %>
           <%= link_to "ログイン", new_user_session_path, class: "login" %>
           <%= link_to "新規登録", new_user_registration_path, class: "new" %>
@@ -29,10 +41,6 @@
     <%= yield %>
     <footer>
       <h2>フッターとなるページ</h2>
-      <%= link_to "ルーム登録", new_register_path, class: "new"  %>
-      <%= link_to "ルーム一覧", registers_path, class: "new"  %>
-      <%= link_to "ルーム予約一覧", reserves_path, class: "new"  %>
-      <%= link_to "アカウント", users_show_path %>
     </footer>
     </div>
   </body>

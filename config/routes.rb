@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'reserves/index'
   devise_for :users
-  get 'users/show'
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'top/page'
   resources :registers

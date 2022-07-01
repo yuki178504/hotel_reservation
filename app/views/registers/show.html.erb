@@ -2,7 +2,7 @@
     <div class="reserve-new-in">
       <%= image_tag (@register.avatar_path.url), size: '700x400' %>
       <div class="reserve-new-main-2">
-        <div class="reserve-image"><%= image_tag (@register.avatar_path.url), size: '50x50' %></div>
+        <div class="reserve-image"><%= image_tag (current_user.image.url), size: '55x55', class: "icon-image" %></div>
         <div class="reserve-new-main-3">
           <div class="reserve-name"><%= @register.name %></div>
           <div class="reserve-address"><%= @register.address %></div>
