@@ -1,8 +1,60 @@
 /*ヘッダー　フッター*/
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+    display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+    margin-top: 5px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+}
+
+/* メニューのデザイン*/
+.nav_content {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 100%;
+    right: 0%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    transition: .5s;
+    padding: 55px 15px;
+}
+  .nav_item a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+  .nav_item {
+    margin: 10px 0px;
+}
+  
+
+/* メニュー黒ポチを消す */
+.nav_list {
+    padding: 20px;
+    background-color: white;
+    list-style: none;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked ~ .nav_content {
+    top: 0;/* メニューを画面に入れる */
+}
+  
+
 header {
-    width: 100%; /* 幅いっぱいを指定 */
-    height: 70px; /* 高さを50pxに指定 */
-    background: black; /* 背景色にグレーを指定 */
+    width: 100%; 
+    height: 70px; 
+    background: black; 
     padding: 0px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
     box-sizing: border-box; /* padding分を含んで幅を100%にするため */
 }
@@ -25,12 +77,17 @@ header {
 }
 
 .user-name {
-    border: 3px solid red;
     padding: 8px 20px;
     margin-top: 10px;
     margin-right: 15px;
     margin-left: auto;
     color: white;
+}
+
+.icon-image {
+    border-radius: 100px;
+    //画像を丸くする
+    object-fit: cover;
 }
 
 .login {
@@ -56,9 +113,9 @@ header {
 
 footer {
     color: white;
-    width: 100%; /* 幅いっぱいを指定 */
-    height: 70px; /* 高さを50pxに指定 */
-    background: black; /* 背景色にグレーを指定 */
+    width: 100%; 
+    height: 70px; 
+    background: black; 
     padding: 0px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
     box-sizing: border-box; /* padding分を含んで幅を100%にするため */
     margin-top: auto;
@@ -82,13 +139,13 @@ main {
     background-color: white;
 }
 
-ul {
+.area-list {
     list-style: none;
     display: flex;
     margin: auto 200px;
 }
 
-li {
+.tokyo {
     color: white;
     font-family:serif;
     font-size: 25px;
@@ -98,21 +155,45 @@ li {
     width: 200px;
     height: 320px;
     background-size: cover;
-}
-
-.tokyo {
     background-image: url("https://static.amanaimages.com/imgroom/rf_preview640/10480/10480000713.jpg");
 }
 
 .osaka {
+    color: white;
+    font-family:serif;
+    font-size: 25px;
+    margin-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 320px;
+    background-size: cover;
     background-image: url("https://blogimg.goo.ne.jp/user_image/35/86/a8c26e627201d4857fbca5770853de4f.jpg");
 }
 
 .kyoto {
+    color: white;
+    font-family:serif;
+    font-size: 25px;
+    margin-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 320px;
+    background-size: cover;
     background-image: url("https://cdn-ak.f.st-hatena.com/images/fotolife/n/nicostop1/20210701/20210701010807.jpg");
 }
 
 .sapporo {
+    color: white;
+    font-family:serif;
+    font-size: 25px;
+    margin-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 320px;
+    background-size: cover;
     background-image: url("https://img.kb-cdn.com/imgviewer/NVpIM2ptOHhYRzVmUk5rM1NrNlFxYVV6enV4aGk2UFRJMmxPckdDUUVNWVJOc25FMktmOWVMa29uM3VxcW1QK214R0RnZVNJOUk4eHdXWkRPN1EvblYxWEdzTndRRmR1eFBJWTNCV2J5VHJwKzFaeUt2Vnc4WklneWwwN0R2WXAvMCsrNWVjZlVXVTRYV1ByODFwUTJsc3NyM3FuMG5Yd0VkdXZSYUFCTDl2QzRiQ3pRZ2lHWExTa1Y4T3FNYjZhclN1anJQcGxqWnpUc0c4Z2xpclkxdz09");
 }
 
@@ -180,6 +261,10 @@ article {
 
 .basic-ul {
     display: inline;
+}
+
+.basic-li {
+    border: 1px solid blue;
 }
 
 .basic-link {
@@ -301,10 +386,6 @@ tr td {
     padding: 30px 70px;
 }
 
-.reserve-new-in {
-
-}
-
 .reserve-new-main-2 {
     display: flex;
 }
@@ -415,6 +496,51 @@ tr td {
     background-color: #00bfff;
     border-radius: 5px;
     cursor: pointer;
+}
+/*アカウント詳細画面*/
+.acount-main {
+    width: 100%;
+    display: flex;
+}
+
+.acount {
+    height: 700px;
+    padding: 10px 20px;
+    border-right: 1px solid #dcdcdc;
+}
+
+.acount-ul {
+    list-style: none;
+}
+
+.acount-li {
+    color: #1e90ff;
+    font-size: 17px;
+    padding: 3px 30px 3px 0px;
+    margin: 15px 0px;
+    border-right: 3px solid #1e90ff;
+}
+
+.acount-link-1 {
+    color: #1e90ff;
+}
+
+.acount-li-2 {
+    color: black;
+    font-size: 17px;
+    padding: 3px 30px 3px 0px;
+    margin: 15px 0px;
+}
+
+.acount-area {
+    border: 1px solid orchid;
+}
+
+.acount-area-in {
+    width: 500px;
+    margin: 30px auto;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid palegreen;
 }
 
 
