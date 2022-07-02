@@ -13,7 +13,7 @@
     <div class="reserve-new">
       <div class="reserve-new-input">
         <div class="reserve-price"><%= @register.price %>円 / 日</div>
-        <%= form_with model: @reserve, url: confirm_reserves_path(@reserve), local: true do |f| %>
+        <%= form_with model: @reserve, url: confirm_reserves_path, local: true do |f| %> <!--@reserve変数に入力した値を代入して、このままだとcreateメソッドに飛んでしまうので、urlで飛び先を指定してあげる-->
           <%= f.label :starte_date, "開始日" %></br>
           <%= f.date_field :starte_date, class: "start-date" %></br>
           <%= f.label :end_date, "終了日" %></br>
