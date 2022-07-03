@@ -1,0 +1,24 @@
+<div class="search-main">
+
+  <h4 class="search-title">検索結果一覧</h4>
+
+  <div class="search-result">
+    <div class="search-result-1">
+      <div class="search-result-2">
+        <% @registers.each do |register| %>
+          <%= link_to register do %>
+            <div class="search-image"><%= image_tag (register.avatar_path.url), size: '300x200' %></div>
+            <div class="search-version">
+              <div class="search-name"><%= register.name %></div>
+              <div class="search-address"><%= register.address %></div>
+              <div class="search-price"><%= register.price %>円</div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  
+        
+</div>

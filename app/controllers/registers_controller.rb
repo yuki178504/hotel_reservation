@@ -1,6 +1,7 @@
 class RegistersController < ApplicationController
-  before_action :authenticate_user!
+
   def index
+    @registers = Register.all
     @registers = current_user.registers.all #ログイン中のユーザーが登録した部屋を全部取得
   end
 
@@ -17,6 +18,10 @@ class RegistersController < ApplicationController
     else
       render "new"
     end
+  end
+
+  def search #検索されたデータを表示する処理をするためのアクション
+    @registers = @q.result #検索結果を表示する
   end
 
   def show

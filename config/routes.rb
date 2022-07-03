@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'top/page'
   resources :users
-  resources :registers
+  resources :registers do
+    get :search, on: :collection
+  end
   resources :reserves  do
     post :confirm, on: :collection
   end
