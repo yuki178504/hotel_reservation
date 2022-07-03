@@ -20,7 +20,7 @@
             <td>
                 <%= image_tag (reserve.avatar_path), size: '300x200' %>
            </td>
-            <td><%= link_to reserve.name, registers_path %></td>
+            <td><%= link_to reserve.name, register_path(@registers.id) %></td>
             <td><%= reserve.introduction %></td>
             <td><%= reserve.total %>円</td>
             <td><%= reserve.starte_date %></td>

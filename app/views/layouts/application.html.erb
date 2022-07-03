@@ -15,8 +15,17 @@
     <header>
       <div class="header-list">
         <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"), "/top/page" %>
-        <p class="search-window">検索窓</p>
-        <p class="search-window">検索窓</p>
+
+        <%= search_form_for @q, url: search_registers_path do |f| %>
+          <div class="search-window"><%= f.search_field :address_cont, placeholder: "エリア" %>
+          <%= f.submit "検索" %></div>
+        <% end %>
+
+        <%= search_form_for @q, url: search_registers_path do |f| %>
+          <div class="search-window"><%= f.search_field :name_cont, placeholder: "キーワード" %>
+          <%= f.submit "検索" %></div>
+        <% end %>
+
         <% if user_signed_in? %>
           <p class="user-name"><%= current_user.name %></p>
           <div class="nav">

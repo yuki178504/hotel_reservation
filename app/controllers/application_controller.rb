@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :page
+
+    def page
+        @q = Register.ransack(params[:q])
+    end
 
     def after_sign_in_path_for(resource)
         top_page_path

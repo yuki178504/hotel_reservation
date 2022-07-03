@@ -1,5 +1,5 @@
 class TopController < ApplicationController
   def page
-    @user = current_user
+    @q = Register.ransack(params[:q])
   end
 end
