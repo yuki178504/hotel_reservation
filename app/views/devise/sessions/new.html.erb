@@ -3,7 +3,9 @@
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= render "devise/shared/error_messages", model: f.object %>
+
+  <div class="alert"><%= alert %></div>
   
     <div class="field">
       <%= f.label "必須", class: "label" %>

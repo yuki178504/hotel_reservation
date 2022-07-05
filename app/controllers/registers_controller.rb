@@ -1,7 +1,6 @@
 class RegistersController < ApplicationController
 
   def index
-    @registers = Register.all
     @registers = current_user.registers.all #ログイン中のユーザーが登録した部屋を全部取得
   end
 

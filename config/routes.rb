@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'top#page'
   get 'users/index'
   devise_for :users #devise_forはヘルパーメソッドで、モデル名を指定すると、必要なルーティングを自動でしてくれる
   resources :accounts

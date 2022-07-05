@@ -2,25 +2,33 @@
     <div class="acount">
       <ul class="acount-ul">
         <li class="acount-li"><%= link_to "アカウント", accounts_path, class: "acount-link-1" %></li>
-        <li class="acount-li-2"><%= link_to "プロフィール", edit_account_path(@users.id) %></li> 
+        <li class="acount-li-2"><%= link_to "プロフィール", edit_account_path(@users.id), class: "acount-link-2" %></li> 
         <!--link_toでeditユーザーのurlを指定して、その指定先にログイン中のデータを全部取得するメソッドを代入した@users変数からidだけを取得している-->
       </ul>
     </div>
   
     <div class="acount-area">
-      <div class="acount-area-in">
-        <div class="">
-          <div>アカウント</div>
+      <div class="field-out room-out">
+        <div class="field-in">
+          <p class="room-register">アカウント</p>
         </div>
-        <div class="">
-          <div>メールアドレス</div>
+      </div>
+
+      <div class="field-out">
+        <div class="field-in">
+          <div class="acount-text">メールアドレス</div>
           <div><%= @users.email %></div>
         </div>
-        <div class="">
-          <div>パスワード</div>
+      </div>
+
+      <div class="field-out">
+        <div class="field-in">
+          <div class="acount-text">パスワード</div>
           <div>***********</div>
         </div>
-        <div class=""><%= link_to "編集", edit_user_registration_path %></div>
       </div>
+
+      <div class="field-in"><%= link_to "編集", edit_user_registration_path, class: "acount-edit" %></div>
+      
     </div>
-  </div>
+</div>
