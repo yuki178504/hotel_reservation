@@ -19,6 +19,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def edit
+      top_page_path
+  end
+
   # PUT /resource
   # def update
   #   super

@@ -20,7 +20,7 @@
             <%= image_tag (register.avatar_path.url), size: '300x200' %>
           <% end %>
         </td>
-         <td><%= link_to register.name, register %></td>
+         <td><%= link_to register.name, register, class: "register-td-name" %></td>
          <td><%= register.introduction %></td>
          <td><%= register.price %>円</td>
          <td><%= register.created_at.to_s(:datetime_jp) %></td>

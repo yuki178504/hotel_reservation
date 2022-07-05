@@ -72,8 +72,19 @@ header {
 }
 
 .search-window {
-    border: 1px solid rebeccapurple;
     display: inline;
+}
+
+.search-window-in {
+    height: 30px;
+    margin-top: 20px;
+}
+
+.search-window-action {
+    border-radius: 5px;
+    color: white;
+    background-color: #32cd32;
+    border: none;
     margin-right: 10px;
 }
 
@@ -113,14 +124,17 @@ header {
 }
 
 footer {
+    text-align: center;
+    vertical-align: middle;
     color: white;
     width: 100%; 
-    height: 70px; 
+    height: 100px; 
     background: black; 
     padding: 0px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
     box-sizing: border-box; /* padding分を含んで幅を100%にするため */
     margin-top: auto;
 }
+
 /*トップページ*/
 
 main {
@@ -228,6 +242,7 @@ article {
     width: 500px;
     padding: 20px 0px;
     margin: 100px 400px;
+    background-color: #f5f5f5;
 }
 
 .new-acount {
@@ -263,9 +278,16 @@ article {
     border-radius: 5px;
     color: white;
     background-color: #32cd32;
-    border: none;
+    border: 1px solid black;
     padding: 7px 120px;
     cursor: pointer;
+    box-shadow:0 4px 0 #dcdcdc;
+}
+
+.actions:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
 }
 /*ルーム新規登録画面*/
 .main-register {
@@ -281,14 +303,14 @@ article {
 }
 
 .basic-li {
-    border: 1px solid blue;
+    padding-right: 20px;
 }
 
 .basic-link {
     color: #1e90ff;
     font-size: 17px;
     margin-left: 30px;
-    padding-right: 80px;
+    padding-right: 60px;
     padding-bottom: 10px;
     padding-top: 10px;
     border-right: 3px solid #1e90ff;
@@ -302,6 +324,7 @@ article {
     width: 900px;
     padding: 20px 0px;
     margin: 60px 100px;
+    background-color: #f5f5f5;
 }
 
 .room-register {
@@ -395,6 +418,11 @@ table {
 tr td {
     padding: 0px;
     border: 1px solid #dcdcdc;
+}
+
+.register-td-name {
+    color: blue;
+    font-weight: bold;
 }
 
 /*新規予約画面*/
@@ -510,9 +538,20 @@ tr td {
 }
 
 .back {
-    background-color: #00bfff;
+    margin: 5px 0px;
     border-radius: 5px;
+    color: white;
+    background-color: aqua;
+    border: 1px solid black;
+    padding: 7px 120px;
     cursor: pointer;
+    box-shadow:0 4px 0 #dcdcdc;
+}
+
+.back:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
 }
 /*アカウント詳細画面*/
 .acount-main {
@@ -531,7 +570,6 @@ tr td {
 }
 
 .acount-li {
-    color: #1e90ff;
     font-size: 17px;
     padding: 3px 30px 3px 0px;
     margin: 15px 0px;
@@ -542,8 +580,11 @@ tr td {
     color: #1e90ff;
 }
 
-.acount-li-2 {
+.acount-link-2 {
     color: black;
+}
+
+.acount-li-2 {
     font-size: 17px;
     padding: 3px 30px 3px 0px;
     margin: 15px 0px;
@@ -558,6 +599,80 @@ tr td {
     margin: 30px auto;
     padding: 10px 20px 10px 20px;
     border: 1px solid palegreen;
+}
+
+.acount-edit {
+    margin: 5px 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: aqua;
+    border: 1px solid black;
+    padding: 7px 120px;
+    cursor: pointer;
+    box-shadow:0 4px 0 #dcdcdc;
+}
+
+.acount-edit:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
+}
+
+.acount-area {
+    border:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    width: 900px;
+    padding: 20px 0px;
+    margin: 60px 100px;
+    background-color: #f5f5f5;
+    height: 320px;
+}
+
+.acount-text {
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+/*アカウントプロフィール画面*/
+.acount-edit-li {
+    font-size: 17px;
+    padding: 3px 30px 3px 0px;
+    margin: 15px 0px;
+}
+
+.acount-edit-li-2 {
+    font-size: 17px;
+    padding: 3px 30px 3px 0px;
+    margin: 15px 0px;
+    border-right: 3px solid #1e90ff;
+}
+
+.acount-edit-link-1 {
+    color: black;
+}
+
+.acount-edit-link-2 {
+    color: #1e90ff;
+}
+
+.edit-name {
+    margin-left: 35px;
+}
+
+.edit-introduction {
+    height: 150px;
+}
+
+.field-in-image {
+    text-align: center;
+}
+
+/*アカウント編集画面*/
+.edit-title {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /*検索結果一覧画面*/
@@ -633,4 +748,14 @@ a {
     font-weight: bold;
     color: red;
 }
+
+.devise-notice {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    background-color: #00bfff;
+}
+
+
 
