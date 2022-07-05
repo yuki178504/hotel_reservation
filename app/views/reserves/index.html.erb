@@ -18,9 +18,11 @@
         <% @reserves.each do |reserve| %>
           <tr>
             <td>
+              <%= link_to "/registers/#{reserve.register.id}" do %>
                 <%= image_tag (reserve.avatar_path), size: '300x200' %>
+              <% end %>
            </td>
-            <td><%= link_to reserve.name, register_path(@registers.id) %></td>
+            <td><%= link_to reserve.name, "/registers/#{reserve.register.id}", class: "register-td-name" %></td>
             <td><%= reserve.introduction %></td>
             <td><%= reserve.total %>円</td>
             <td><%= reserve.starte_date %></td>

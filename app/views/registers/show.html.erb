@@ -15,11 +15,11 @@
         <div class="reserve-price"><%= @register.price %>円 / 日</div>
         <%= form_with model: @reserve, url: confirm_reserves_path, local: true do |f| %> <!--@reserve変数に入力した値を代入して、このままだとcreateメソッドに飛んでしまうので、urlで飛び先を指定してあげる-->
           <%= f.label :starte_date, "開始日" %></br>
-          <%= f.date_field :starte_date, class: "start-date" %></br>
+          <%= f.date_field :starte_date, min: Date.today, required: true, class: "start-date" %></br>
           <%= f.label :end_date, "終了日" %></br>
-          <%= f.date_field :end_date, class: "end-date" %></br>
+          <%= f.date_field :end_date, min: Date.today, max: "2050-01-01", required: true, class: "end-date" %></br>
           <%= f.label :number_people, "人数" %></br>
-          <%= f.number_field :number_people, class: "number-people" %></br>
+          <%= f.number_field :number_people, required: true, min: "1", class: "number-people" %></br>
 
           <%= f.hidden_field :register_id, value: @register.id %>
           <%= f.hidden_field :name, value: @register.name %>
