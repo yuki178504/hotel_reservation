@@ -86,6 +86,13 @@ header {
     background-color: #32cd32;
     border: none;
     margin-right: 10px;
+    box-shadow:0 4px 0 black;
+}
+
+.search-window-action:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
 }
 
 .user-name {
@@ -395,6 +402,13 @@ article {
     padding: 7px 120px;
     cursor: pointer;
     margin-left: 30px;
+    box-shadow:0 4px 0 #dcdcdc;
+}
+
+.actions-registers:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
 }
 
 /*登録済みルーム一覧画面*/

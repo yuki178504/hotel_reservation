@@ -1,5 +1,6 @@
 <div class="confirm-main">
   <div class="confirm-main-2">
+    <%= render 'shared/error', obj: @reserve, class: "alert-out" %>
     <div class="confirm-title">予約内容確認</div>
     <div class="confirm-price"><%= @reserve.price %>円　/ 日</div>
     <div>開始日</div>
