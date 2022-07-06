@@ -1,0 +1,801 @@
+/*ヘッダー　フッター*/
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+    display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+    margin-top: 5px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+}
+
+/* メニューのデザイン*/
+.nav_content {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 100%;
+    right: 0%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    transition: .5s;
+    padding: 55px 15px;
+}
+  .nav_item a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+  .nav_item {
+    margin: 10px 0px;
+}
+  
+
+/* メニュー黒ポチを消す */
+.nav_list {
+    padding: 20px;
+    background-color: white;
+    list-style: none;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked ~ .nav_content {
+    top: 0;/* メニューを画面に入れる */
+}
+  
+
+header {
+    width: 100%; 
+    height: 70px; 
+    background: black; 
+    padding: 0px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
+    box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.header-list {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.search-window {
+    display: inline;
+}
+
+.search-window-in {
+    height: 30px;
+    margin-top: 20px;
+}
+
+.search-window-action {
+    border-radius: 5px;
+    color: white;
+    background-color: #32cd32;
+    border: none;
+    margin-right: 10px;
+    box-shadow:0 4px 0 black;
+}
+
+.search-window-action:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
+}
+
+.user-name {
+    padding: 8px 20px;
+    margin-top: 10px;
+    margin-right: 15px;
+    margin-left: auto;
+    color: white;
+}
+
+.icon-image {
+    border-radius: 100px;
+    //画像を丸くする
+    object-fit: cover;
+}
+
+.login {
+    border-radius: 5px;
+    color: white;
+    background-color: #32cd32;
+    height: 25px;
+    padding: 8px 20px;
+    margin-top: 10px;
+    margin-right: 15px;
+    margin-left: auto;
+    
+}
+
+.new {
+    border-radius: 5px;
+    color: white;
+    background-color: #00bfff;
+    height: 25px;
+    padding: 8px 20px;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    width: 100%; 
+    height: 100px; 
+    background: black; 
+    padding: 0px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
+    box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+    margin-top: auto;
+}
+
+/*トップページ*/
+
+main {
+    width: 100%;
+    height: 600px;
+    background-image: url("https://pro-foto.jp/free/img/images_big/umi0178-022.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+.title-area {
+    border-radius: 10px;
+    padding: 10px 30px;
+    position: absolute;
+    bottom: 150px;
+    left: 50px;
+    background-color: white;
+}
+
+.main-title {
+    font-size: 25px;
+}
+
+.main-search-window {
+    width: 400px;
+    height: 35px;
+    font-size: 16px;
+}
+
+.article-title {
+    font-weight: bold;
+    font-size: large;
+    margin: 20px 235px;
+}
+
+.area-list {
+    list-style: none;
+    display: flex;
+    margin: auto 200px;
+}
+
+.tokyo {
+    color: white;
+    font-family:serif;
+    font-size: 25px;
+    margin-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 320px;
+    background-size: cover;
+    background-image: url("https://static.amanaimages.com/imgroom/rf_preview640/10480/10480000713.jpg");
+}
+
+.osaka {
+    color: white;
+    font-family:serif;
+    font-size: 25px;
+    margin-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 320px;
+    background-size: cover;
+    background-image: url("https://blogimg.goo.ne.jp/user_image/35/86/a8c26e627201d4857fbca5770853de4f.jpg");
+}
+
+.kyoto {
+    color: white;
+    font-family:serif;
+    font-size: 25px;
+    margin-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 320px;
+    background-size: cover;
+    background-image: url("https://cdn-ak.f.st-hatena.com/images/fotolife/n/nicostop1/20210701/20210701010807.jpg");
+}
+
+.sapporo {
+    color: white;
+    font-family:serif;
+    font-size: 25px;
+    margin-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 320px;
+    background-size: cover;
+    background-image: url("https://img.kb-cdn.com/imgviewer/NVpIM2ptOHhYRzVmUk5rM1NrNlFxYVV6enV4aGk2UFRJMmxPckdDUUVNWVJOc25FMktmOWVMa29uM3VxcW1QK214R0RnZVNJOUk4eHdXWkRPN1EvblYxWEdzTndRRmR1eFBJWTNCV2J5VHJwKzFaeUt2Vnc4WklneWwwN0R2WXAvMCsrNWVjZlVXVTRYV1ByODFwUTJsc3NyM3FuMG5Yd0VkdXZSYUFCTDl2QzRiQ3pRZ2lHWExTa1Y4T3FNYjZhclN1anJQcGxqWnpUc0c4Z2xpclkxdz09");
+}
+
+article {
+    width: 100%;
+    height: 400px;
+}
+/*新規登録画面とログイン画面*/
+.sign-up-page {
+    border:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    text-align: center;
+    width: 500px;
+    padding: 20px 0px;
+    margin: 100px 400px;
+    background-color: #f5f5f5;
+}
+
+.new-acount {
+    padding: 10px;
+}
+
+.label {
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    font-size: 10px;
+    padding: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.field {
+    padding: 10px;
+}
+
+.text_field {
+    font-size: 15px;
+    width: 300px;
+    height: 30px;
+}
+
+.field_with_errors {
+    display:contents
+}
+
+.actions {
+    margin: 15px 0px;
+    border-radius: 5px;
+    color: white;
+    background-color: #32cd32;
+    border: 1px solid black;
+    padding: 7px 120px;
+    cursor: pointer;
+    box-shadow:0 4px 0 #dcdcdc;
+}
+
+.actions:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
+}
+/*ルーム新規登録画面*/
+.main-register {
+    display: flex;
+}
+
+.basic-out {
+    border-right: 2px solid #dcdcdc;
+}
+
+.basic-ul {
+    display: inline;
+}
+
+.basic-li {
+    padding-right: 20px;
+}
+
+.basic-link {
+    color: #1e90ff;
+    font-size: 17px;
+    margin-left: 30px;
+    padding-right: 60px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-right: 3px solid #1e90ff;
+}
+
+.register {
+    border:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    width: 900px;
+    padding: 20px 0px;
+    margin: 60px 100px;
+    background-color: #f5f5f5;
+}
+
+.room-register {
+    margin-top: -10px;
+    font-size: 20px;
+    
+}
+
+.field-out {
+    margin: 20px 10px;
+    padding: 20px;
+    border-bottom: 1px solid #dcdcdc;
+    
+}
+
+.room-out {
+    margin: 0px 10px;
+    padding: 0px;
+}
+
+.field-in {
+    margin-bottom: 10px;
+    text-align: left;
+    display: flex;
+}
+
+.room {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+.label-register {
+    font-size: 14px;
+    height: fit-content;
+    margin-right: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.register-text {
+    margin-left: 3px;
+    font-size: 15px;
+    width: 625px;
+    height: 30px;
+}
+
+.name {
+    margin-left: 19px;
+}
+
+.introduction {
+    height: 100px;
+}
+
+.address {
+    margin-left: 49px;
+}
+
+.actions-registers {
+    border-radius: 5px;
+    color: white;
+    background-color: #32cd32;
+    border: none;
+    padding: 7px 120px;
+    cursor: pointer;
+    margin-left: 30px;
+    box-shadow:0 4px 0 #dcdcdc;
+}
+
+.actions-registers:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
+}
+
+/*登録済みルーム一覧画面*/
+.register-done-main {
+    padding: 20px 40px;
+}
+
+.register-done {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+table {
+    background-color: #f5f5f5;
+    border:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+}
+
+tr td {
+    padding: 0px;
+    border: 1px solid #dcdcdc;
+}
+
+.register-td-name {
+    color: blue;
+    font-weight: bold;
+}
+
+/*新規予約画面*/
+.reserve-new-main {
+    display: flex;
+    padding: 30px 70px;
+}
+
+.reserve-new-main-2 {
+    display: flex;
+}
+
+.reserve-image {
+    margin: 10px;
+}
+
+.reserve-name {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+.reserve-address {
+    margin: 10px;
+    font-size: 13px;
+}
+
+.reserve-introduction {
+    padding: 20px 0px;
+    border-bottom: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
+}
+
+.reserve-new {
+    padding: 20px;
+}
+
+.reserve-new-input {
+    padding: 20px;
+    border: 1px solid #d3d3d3;
+    background-color: #f5f5f5;
+}
+
+.reserve-price {
+    margin: 10px 0px;
+    font-weight: bold;
+}
+
+.start-date {
+    font-size: 16px;
+    height: 30px;
+    width: 300px;
+    margin: 10px 0px;
+}
+
+.end-date {
+    font-size: 16px;
+    height: 30px;
+    width: 300px;
+    margin: 10px 0px;
+}
+
+.number-people {
+    font-size: 16px;
+    height: 30px;
+    width: 300px;
+    margin: 10px 0px;
+}
+
+.reserve-submit {
+    background-color: #00bfff;
+    margin: 15px 0px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 7px 120px;
+    cursor: pointer;
+    box-shadow:0 4px 0 #dcdcdc;
+}
+
+.reserve-submit:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
+}
+
+/*予約確認画面*/
+
+.confirm-main {
+    padding: 10px 400px;
+}
+
+.confirm-main-2 {
+    padding: 10px;
+    border: 1px solid #d3d3d3;
+}
+
+.confirm-title {
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.confirm-price {
+    margin: 15px 0px;
+    font-size: 20px;
+}
+
+.confirm-date {
+    height: 30px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    background-color: #dcdcdc;
+    border: 2px solid #d3d3d3;
+}
+
+.confirm-day {
+    padding: 15px 0px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.confirm-back {
+    margin: 5px 0px 5px 120px;
+    border-radius: 5px;
+    color: white;
+    background-color: aqua;
+    border: 1px solid black;
+    padding: 7px 50px;
+    cursor: pointer;
+    box-shadow:0 4px 0 #dcdcdc;
+}
+
+.confirm-back:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
+}
+
+.back {
+    margin: 5px 0px;
+    border-radius: 5px;
+    color: white;
+    background-color: aqua;
+    border: 1px solid black;
+    padding: 7px 120px;
+    cursor: pointer;
+    box-shadow:0 4px 0 #dcdcdc;
+}
+
+.back:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
+}
+/*アカウント詳細画面*/
+.acount-main {
+    width: 100%;
+    display: flex;
+}
+
+.acount {
+    height: 700px;
+    padding: 10px 20px;
+    border-right: 1px solid #dcdcdc;
+}
+
+.acount-ul {
+    list-style: none;
+}
+
+.acount-li {
+    font-size: 17px;
+    padding: 3px 30px 3px 0px;
+    margin: 15px 0px;
+    border-right: 3px solid #1e90ff;
+}
+
+.acount-link-1 {
+    color: #1e90ff;
+}
+
+.acount-link-2 {
+    color: black;
+}
+
+.acount-li-2 {
+    font-size: 17px;
+    padding: 3px 30px 3px 0px;
+    margin: 15px 0px;
+}
+
+.acount-area {
+    border: 1px solid orchid;
+}
+
+.acount-area-in {
+    width: 500px;
+    margin: 30px auto;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid palegreen;
+}
+
+.acount-edit {
+    margin: 5px 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: aqua;
+    border: 1px solid black;
+    padding: 7px 120px;
+    cursor: pointer;
+    box-shadow:0 4px 0 #dcdcdc;
+}
+
+.acount-edit:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
+}
+
+.acount-area {
+    border:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 0px 6px 3px;
+    width: 900px;
+    padding: 20px 0px;
+    margin: 60px 100px;
+    background-color: #f5f5f5;
+    height: 320px;
+}
+
+.acount-text {
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+/*アカウントプロフィール画面*/
+.acount-edit-li {
+    font-size: 17px;
+    padding: 3px 30px 3px 0px;
+    margin: 15px 0px;
+}
+
+.acount-edit-li-2 {
+    font-size: 17px;
+    padding: 3px 30px 3px 0px;
+    margin: 15px 0px;
+    border-right: 3px solid #1e90ff;
+}
+
+.acount-edit-link-1 {
+    color: black;
+}
+
+.acount-edit-link-2 {
+    color: #1e90ff;
+}
+
+.edit-name {
+    margin-left: 35px;
+}
+
+.edit-introduction {
+    height: 150px;
+}
+
+.field-in-image {
+    text-align: center;
+}
+
+/*アカウント編集画面*/
+.edit-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*検索結果一覧画面*/
+.search-main {
+    padding: 20px 50px;
+}
+
+.search-title {
+    font-size: 25px;
+}
+
+.search-result {
+    padding: 0px 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-result-2 {
+    width: 24%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid #dcdcdc;;
+    background-color: #dcdcdc;
+}
+
+.search-image {
+    box-sizing: content-box;
+}
+
+.search-image-in {
+
+}
+
+.search-version {
+    color: black;
+    
+}
+
+.search-name {
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.search-address {
+    margin: 10px 0px;
+}
+
+.search-price {
+    text-align: right;
+    margin: 10px 0px;
+    
+}
+
+/*全体*/
+body {
+    padding-top: 90px;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.alert-out {
+    color: red;
+    border: 2px solid red;
+    background-color: #ffe4e1;
+}
+
+.alert {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+
+.devise-notice {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    background-color: #00bfff;
+}
+
+
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HotelApp</title>
+    <title>宿泊予約サイト</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,46 @@
   </head>
 
   <body>
+    <div class="container">
+    <header>
+      <div class="header-list">
+        <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"), "/top/page" %>
+
+        <%= search_form_for @q, url: search_registers_path do |f| %>
+          <div class="search-window"><%= f.search_field :address_start, placeholder: "エリア", class: "search-window-in" %></div>
+          <%= f.submit "探す", class: "search-window-action" %>
+        <% end %>
+
+        <%= search_form_for @q, url: search_registers_path do |f| %>
+          <div class="search-window"><%= f.search_field :introduction_cont, placeholder: "キーワード", class: "search-window-in" %></div>
+          <%= f.submit "探す", class: "search-window-action" %>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <p class="user-name"><%= current_user.name %></p>
+          <div class="nav">
+            <input id="drawer_input" class="drawer_hidden" type="checkbox">
+            <label for="drawer_input" class="drawer_open"><%= image_tag (current_user.image.url), size: '55x55', class: "icon-image" %></label>
+            <nav class="nav_content">
+              <ul class="nav_list">
+                <li class="nav_item"><%= link_to "ルーム登録", new_register_path %></li>
+                <li class="nav_item"><%= link_to "ルーム予約済み一覧", reserves_path %></li>
+                <li class="nav_item"><%= link_to "ルーム登録済み一覧", registers_path %></li>
+                <li class="nav_item"><%= link_to "アカウント設定", accounts_path %></li>
+                <li class="nav_item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </nav>
+          </div>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path, class: "login" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "new" %>
+        <% end %>
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      <p>© 2020 POTEPAN.INC.</p>
+    </footer>
+    </div>
   </body>
 </html>

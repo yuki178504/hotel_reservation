@@ -1,0 +1,32 @@
+<div class="register-done-main">
+    <p class="register-done">登録済みルーム一覧</p>
+   
+    <table>
+      <thead>
+        <tr>
+          <th>ルーム画像</th>
+          <th>ルーム名</th>
+          <th>ルーム紹介</th>
+          <th>料金</th>
+          <th>登録日</th>
+        </tr>
+      </thead>
+   
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+             <%= link_to register_path(user.register.id) do %>
+               <%= image_tag (user.register.avatar_path.url), size: '300x200' %>
+             <% end %>
+           </td>
+            <td><%= link_to user.register.name, register_path(user.register.id) %></td>
+            <td><%= user.register.introduction %></td>
+            <td><%= user.register.price %>円</td>
+            <td><%= user.register.created_at.to_s(:datetime_jp) %></td>
+          </tr>
+          <% end %>
+   
+      </tbody>
+    </table>
+   </div>

@@ -1,0 +1,31 @@
+<main>
+  <div class="devise-notice"><%= notice %></div>
+  <div class="title-area">
+    <div class="title-area-in">
+      <h3 class="main-title">Potepan Shareでまだ体験<br>したことのない旅をしよう</h3>
+      <p>エリア</p>
+      <%= search_form_for @q, url: search_registers_path do |f| %>
+        <%= f.search_field :address_start, placeholder: "東京", class: "main-search-window" %><br>
+        <%= f.submit "探す", class: "actions" %>
+      <% end %>
+    </div>
+  </div>
+</main>
+
+<article>
+  <p class="article-title">おすすめのエリア</p>
+  <ul class="area-list">
+    <%= link_to search_registers_path(q: { address_matches: "東京%"}) do %>
+    <li class="tokyo">東京</li>
+    <% end %>
+    <%= link_to search_registers_path(q: { address_matches: "大阪%"}) do %>
+    <li class="osaka">大阪</li>
+    <% end %>
+    <%= link_to search_registers_path(q: { address_matches: "京都%"}) do %>
+    <li class="kyoto">京都</li>
+    <% end %>
+    <%= link_to search_registers_path(q: { address_matches: "札幌%"}) do %>
+    <li class="sapporo">札幌</li>
+    <% end %>
+  </ul>
+</article>

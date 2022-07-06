@@ -1,0 +1,21 @@
+<div class="search-main">
+
+  <p class="search-title">検索結果：<%= @count %>件</p>
+
+  <div class="search-result">
+    <% @registers.each do |register| %>
+      <div class="search-result-2">
+        <%= link_to register do %>
+        <div class="search-image"><%= image_tag (register.avatar_path.url), size: '300x200', class: "search-image-in" %></div>
+        <div class="search-version">
+          <div class="search-name"><%= register.name %></div>
+          <div class="search-address"><%= register.address %></div>
+          <div class="search-price"><%= register.price %>円</div>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  
+        
+</div>
