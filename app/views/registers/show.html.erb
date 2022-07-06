@@ -2,7 +2,7 @@
     <div class="reserve-new-in">
       <%= image_tag (@register.avatar_path.url), size: '700x400' %>
       <div class="reserve-new-main-2">
-        <div class="reserve-image"><%= image_tag (current_user.image.url), size: '55x55', class: "icon-image" %></div>
+        <div class="reserve-image"><%= image_tag (@register.image.url), size: '55x55', class: "icon-image" %></div>
         <div class="reserve-new-main-3">
           <div class="reserve-name"><%= @register.name %></div>
           <div class="reserve-address"><%= @register.address %></div>
@@ -13,6 +13,7 @@
     <div class="reserve-new">
       <div class="reserve-new-input">
         <div class="reserve-price"><%= @register.price %>円 / 日</div>
+        
         <%= form_with model: @reserve, url: confirm_reserves_path, local: true do |f| %> <!--@reserve変数に入力した値を代入して、このままだとcreateメソッドに飛んでしまうので、urlで飛び先を指定してあげる-->
           <%= f.label :starte_date, "開始日" %></br>
           <%= f.date_field :starte_date, min: Date.today, required: true, class: "start-date" %></br>
@@ -27,9 +28,12 @@
           <%= f.hidden_field :introduction, value: @register.introduction %>
           <%= f.hidden_field :price, value: @register.price %>
           <%= f.hidden_field :avatar_path, value: @register.avatar_path %>
-
+          
+          <% if user_signed_in? %>
           <%= f.submit "予約完了", class: "reserve-submit" %>
-
+          <% else %>
+          <%= link_to "ログインしてください", new_register_path, class: "reserve-submit" %>
+          <% end %>
           
         <% end %>
       </div>

@@ -1,5 +1,6 @@
 class ReservesController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     @reserves = Reserve.where(user_id: current_user.id)
   end
@@ -10,7 +11,7 @@ class ReservesController < ApplicationController
   def confirm
     @reserve = Reserve.new(reserve_params)
     @day = (@reserve.end_date - @reserve.starte_date).to_i
-    @sum = (@reserve.price * @reserve.number_people).to_i
+    @sum = (@day * @reserve.price * @reserve.number_people).to_i
   end
 
   def create

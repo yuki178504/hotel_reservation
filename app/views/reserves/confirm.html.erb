@@ -23,8 +23,8 @@
     <%= f.hidden_field :end_date %>
     <%= f.hidden_field :register_id%>
   <% end %>
-  <%= link_to :back do %>
-      <button class="back">戻る</button>
+  <%= link_to register_path(@reserve.register_id) do %>
+      <button class="confirm-back">戻る</button>
     <% end %>
   </div>
 </div>

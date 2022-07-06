@@ -1,7 +1,7 @@
 ja:
   activerecord:
    models:
-    register: レギスター
+    register: 
    attributes:
     register:
      name: ⚠︎ルーム名
@@ -9,3 +9,13 @@ ja:
      price: ⚠︎料金
      address: ⚠︎住所
      avatar_path: ⚠︎ルーム画像
+
+ja:
+  activerecord:
+   models:
+    reserve:
+   attributes:
+    reserve:
+     starte_date: 開始日
+     end_date: 終了日
+     

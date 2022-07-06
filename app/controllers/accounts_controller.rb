@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @users = current_user #ログイン中のデータを全部取得するメソッドを@users変数に代入している
